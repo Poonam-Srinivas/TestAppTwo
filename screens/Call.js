@@ -6,8 +6,8 @@ import {
 } from '@zegocloud/zego-uikit-prebuilt-call-rn';
 
 export default function CallPage({route, navigation}) {
-  const {name, id} = route.params; // Destructuring 'name' and 'id'
-  const [callIDs, setCallIDs] = useState([id]); // State to manage multiple call IDs
+  const {name, id} = route.params;
+  const [callIDs, setCallIDs] = useState([id]);
 
   const handleJoinCall = callID => {
     setCallIDs([...callIDs, callID]);
@@ -22,9 +22,9 @@ export default function CallPage({route, navigation}) {
       {callIDs.map((callID, index) => (
         <ZegoUIKitPrebuiltCall
           key={index}
-          appID={82066232} // Replace with your actual App ID
+          appID={82066232}
           appSign={
-            '9d93cf5d29dc9e92b64ef646af825344dd588151a4636f0fd1f784a8707b07c1' // Replace with your actual App Sign
+            '9d93cf5d29dc9e92b64ef646af825344dd588151a4636f0fd1f784a8707b07c1'
           }
           userID={name}
           userName={name}
